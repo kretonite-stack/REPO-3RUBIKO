@@ -5,16 +5,18 @@
   (ver .env.example) — así no queda hardcodeada en el componente y se
   puede cambiar sin tocar código ni volver a desplegar componentes.
 
-  TODO: reemplazar PUBLIC_HERO_VIDEO_URL en .env por la URL directa de
-  Cloudinary (res.cloudinary.com/.../video/upload/....mp4), obtenida
-  desde https://collection.cloudinary.com/ddqx435i5/94ae786043a1f0d106de0ba94389d0ab
+  Zona segura: según la referencia de diseño, el sujeto del video (la
+  construcción) queda hacia el centro-derecha del encuadre, así que todo
+  el texto y los CTAs se mantienen en el tercio izquierdo, sobre un
+  degradado horizontal (oscuro a la izquierda → transparente a la
+  derecha) en vez del degradado inferior genérico.
 */
 const videoUrl = import.meta.env.PUBLIC_HERO_VIDEO_URL || "";
 const posterUrl = import.meta.env.PUBLIC_HERO_POSTER_URL || "/hero-poster.jpg";
 ---
 
 <section
-  class="relative flex min-h-[92vh] w-full items-end overflow-hidden bg-[var(--color-ink)]"
+  class="relative flex min-h-[92vh] w-full items-center overflow-hidden bg-[var(--color-ink)]"
   aria-label="Presentación principal"
 >
   {
@@ -38,36 +40,41 @@ const posterUrl = import.meta.env.PUBLIC_HERO_POSTER_URL || "/hero-poster.jpg";
     )
   }
 
-  {/* Velo de contraste para que el texto sea legible sobre el video */}
-  <div class="absolute inset-0 bg-gradient-to-t from-[var(--color-ink)] via-[var(--color-ink)]/40 to-[var(--color-ink)]/10" />
+  {/* Velo de contraste: fuerte en el tercio izquierdo (zona de texto),
+      se disuelve hacia el centro-derecha para no tapar el video */}
+  <div class="absolute inset-0 bg-gradient-to-r from-[var(--color-ink)] via-[var(--color-ink)]/75 to-transparent sm:via-[var(--color-ink)]/60" />
+  {/* Vignette inferior sutil, ayuda a la legibilidad en pantallas bajas */}
+  <div class="absolute inset-0 bg-gradient-to-t from-[var(--color-ink)]/50 via-transparent to-transparent" />
 
-  <div class="relative z-10 mx-auto w-full max-w-6xl px-6 pb-20 pt-40 sm:px-10">
-    <p class="reveal font-[var(--font-mono)] text-sm uppercase tracking-[0.2em] text-[var(--color-accent-strong)]">
-      3Rubiko
-    </p>
-    <h1 class="reveal mt-4 max-w-3xl font-[var(--font-display)] text-4xl font-semibold leading-[1.05] text-[var(--color-text)] sm:text-6xl">
-      {/* TODO: título real — pendiente de contenido/branding en D:\3rubiko */}
-      Ingeniería y construcción con precisión de cada pieza
-    </h1>
-    <p class="reveal mt-6 max-w-xl text-lg text-[var(--color-text-muted)]">
-      {/* TODO: subtítulo real */}
-      Proyectos ejecutados con estándares técnicos exigentes, de principio a
-      fin.
-    </p>
+  <div class="relative z-10 mx-auto w-full max-w-6xl px-6 pt-24 sm:px-10">
+    <div class="max-w-md sm:max-w-lg">
+      <p class="reveal font-[var(--font-mono)] text-sm uppercase tracking-[0.2em] text-[var(--color-accent-strong)]">
+        3Rubiko
+      </p>
+      <h1 class="reveal mt-4 font-[var(--font-display)] text-4xl font-semibold leading-[1.05] text-[var(--color-text)] sm:text-5xl">
+        Diseño y construcción integral, a tu medida.
+      </h1>
+      <p class="reveal mt-6 text-lg text-[var(--color-text-muted)]">
+        {/* TODO: subtítulo definitivo — pendiente contenido real de D:\3rubiko */}
+        Proyectos residenciales y comerciales ejecutados con precisión, de la
+        idea a la entrega.
+      </p>
 
-    <div class="reveal mt-10 flex flex-wrap gap-4">
-      <a
-        href="#contacto"
-        class="rounded-[var(--radius-sm)] bg-[var(--color-accent)] px-6 py-3 font-medium text-[var(--color-ink)] transition-colors hover:bg-[var(--color-accent-strong)]"
-      >
-        Conversemos tu proyecto
-      </a>
-      <a
-        href="#servicios"
-        class="rounded-[var(--radius-sm)] border border-[var(--color-border)] px-6 py-3 font-medium text-[var(--color-text)] transition-colors hover:border-[var(--color-accent-strong)]"
-      >
-        Ver servicios
-      </a>
+      <div class="reveal mt-10 flex flex-wrap gap-4">
+        <a
+          href="#contacto"
+          class="rounded-[var(--radius-sm)] bg-[var(--color-accent)] px-6 py-3 font-medium text-[var(--color-ink)] transition-colors hover:bg-[var(--color-accent-strong)]"
+        >
+          Conversemos tu proyecto
+        </a>
+        <a
+          href="#servicios"
+          class="rounded-[var(--radius-sm)] border border-[var(--color-border)] px-6 py-3 font-medium text-[var(--color-text)] transition-colors hover:border-[var(--color-accent-strong)]"
+        >
+          Ver servicios
+        </a>
+      </div>
     </div>
   </div>
 </section>
+

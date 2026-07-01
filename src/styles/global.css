@@ -20,11 +20,11 @@
   --color-text: #eef1f5;
   --color-text-muted: #9aa5b3;
 
-  /* Acento — azul acero (confianza / ingeniería) */
-  --color-accent: #3d8bb0;
-  --color-accent-strong: #58aad2;
+  /* Acento — verde lima/oliva (según referencia de diseño del hero) */
+  --color-accent: #9fcb3b;
+  --color-accent-strong: #b4e34f;
 
-  /* Acento secundario — cobre/latón (calidez, detalle "industrial") */
+  /* Acento secundario — cobre/latón, para detalles cálidos puntuales */
   --color-accent-warm: #c98a4b;
 
   /* Estado */
