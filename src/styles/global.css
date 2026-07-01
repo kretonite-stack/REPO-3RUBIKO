@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+/*
+  ── Design tokens — PROVISIONAL ──────────────────────────────────────────
+  Esta paleta y tipografía son un punto de partida razonable para una
+  landing corporativa/industrial mientras Antigravity termina la auditoría
+  de D:\3rubiko (logo, colores de marca, tipografías ya definidas, etc.).
+  En cuanto llegue ese reporte, estos valores se reemplazan aquí y en
+  ningún otro lugar — todo el sitio consume estas variables.
+  ────────────────────────────────────────────────────────────────────────
+*/
+:root {
+  /* Base */
+  --color-ink: #10141a;         /* fondo principal, grafito casi negro */
+  --color-surface: #171c24;     /* superficies elevadas / cards */
+  --color-surface-2: #1f2530;   /* superficies sobre superficies */
+  --color-border: #2a313d;
+
+  /* Texto */
+  --color-text: #eef1f5;
+  --color-text-muted: #9aa5b3;
+
+  /* Acento — azul acero (confianza / ingeniería) */
+  --color-accent: #3d8bb0;
+  --color-accent-strong: #58aad2;
+
+  /* Acento secundario — cobre/latón (calidez, detalle "industrial") */
+  --color-accent-warm: #c98a4b;
+
+  /* Estado */
+  --color-success: #4caf7d;
+  --color-danger: #d1604f;
+
+  /* Tipografía */
+  --font-display: "Space Grotesk", "Arial Narrow", sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  /* Ritmo */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background: var(--color-ink);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-ink);
+}
+
+/* Foco visible accesible, sin depender del outline por defecto del navegador */
+:focus-visible {
+  outline: 2px solid var(--color-accent-strong);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* Utilidades de reveal en scroll (se activan con IntersectionObserver, ver Layout) */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
