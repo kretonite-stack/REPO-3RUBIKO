@@ -1,22 +1,19 @@
 ---
 /*
-  Hero con video de fondo.
-  La URL del video vive en la variable de entorno PUBLIC_HERO_VIDEO_URL
-  (ver .env.example) — así no queda hardcodeada en el componente y se
-  puede cambiar sin tocar código ni volver a desplegar componentes.
+  Hero con video de fondo — spec confirmada por el kit visual oficial
+  (3kubiko_visual_kit/06_implementation/Hero.astro, vía auditoría Antigravity).
 
-  Zona segura: según la referencia de diseño, el sujeto del video (la
-  construcción) queda hacia el centro-derecha del encuadre, así que todo
-  el texto y los CTAs se mantienen en el tercio izquierdo, sobre un
-  degradado horizontal (oscuro a la izquierda → transparente a la
-  derecha) en vez del degradado inferior genérico.
+  Video: Cloudinary (cloud_name ddqx435i5, public_id
+  Night_to_sunrise_transition_202607011823_tcbnix), servido como <video>
+  nativo. Poster: pendiente reemplazar por poster_transition.webp del kit
+  (02_hero) — hoy usa el poster generado por Cloudinary (so_0) como interino.
 */
 const videoUrl = import.meta.env.PUBLIC_HERO_VIDEO_URL || "";
 const posterUrl = import.meta.env.PUBLIC_HERO_POSTER_URL || "/hero-poster.jpg";
 ---
 
 <section
-  class="relative flex min-h-[92vh] w-full items-center overflow-hidden bg-[var(--color-ink)]"
+  class="relative flex min-h-[92vh] w-full items-center overflow-hidden bg-[var(--color-carbon)]"
   aria-label="Presentación principal"
 >
   {
@@ -40,41 +37,36 @@ const posterUrl = import.meta.env.PUBLIC_HERO_POSTER_URL || "/hero-poster.jpg";
     )
   }
 
-  {/* Velo de contraste: fuerte en el tercio izquierdo (zona de texto),
-      se disuelve hacia el centro-derecha para no tapar el video */}
-  <div class="absolute inset-0 bg-gradient-to-r from-[var(--color-ink)] via-[var(--color-ink)]/75 to-transparent sm:via-[var(--color-ink)]/60" />
-  {/* Vignette inferior sutil, ayuda a la legibilidad en pantallas bajas */}
-  <div class="absolute inset-0 bg-gradient-to-t from-[var(--color-ink)]/50 via-transparent to-transparent" />
+  {/* Zona segura: gradiente lineal exacto del kit — oscuro 94% a la
+      izquierda, se disuelve a transparente hacia la derecha */}
+  <div class="absolute inset-0 bg-gradient-to-r from-[#04080f]/94 via-[#04080f]/66 to-transparent" />
 
   <div class="relative z-10 mx-auto w-full max-w-6xl px-6 pt-24 sm:px-10">
     <div class="max-w-md sm:max-w-lg">
       <p class="reveal font-[var(--font-mono)] text-sm uppercase tracking-[0.2em] text-[var(--color-accent-strong)]">
-        3Rubiko
+        Arquitectura · Construcción
       </p>
       <h1 class="reveal mt-4 font-[var(--font-display)] text-4xl font-semibold leading-[1.05] text-[var(--color-text)] sm:text-5xl">
         Diseño y construcción integral, a tu medida.
       </h1>
       <p class="reveal mt-6 text-lg text-[var(--color-text-muted)]">
-        {/* TODO: subtítulo definitivo — pendiente contenido real de D:\3rubiko */}
-        Proyectos residenciales y comerciales ejecutados con precisión, de la
-        idea a la entrega.
+        {/*
+          TODO: copy oficial truncada en el reporte de auditoría
+          ("Transformamos ideas en espacios funcionales..."). Falta el
+          texto completo — está en 06_implementation/visual_guide.md o
+          Hero.astro del kit. Pégamelo para reemplazar esta línea.
+        */}
+        Transformamos ideas en espacios funcionales.
       </p>
 
       <div class="reveal mt-10 flex flex-wrap gap-4">
-        <a
-          href="#contacto"
-          class="rounded-[var(--radius-sm)] bg-[var(--color-accent)] px-6 py-3 font-medium text-[var(--color-ink)] transition-colors hover:bg-[var(--color-accent-strong)]"
-        >
+        <a href="#contacto" class="btn-primary px-6 py-3 font-medium">
           Conversemos tu proyecto
         </a>
-        <a
-          href="#servicios"
-          class="rounded-[var(--radius-sm)] border border-[var(--color-border)] px-6 py-3 font-medium text-[var(--color-text)] transition-colors hover:border-[var(--color-accent-strong)]"
-        >
+        <a href="#servicios" class="btn-secondary px-6 py-3 font-medium">
           Ver servicios
         </a>
       </div>
     </div>
   </div>
 </section>
-

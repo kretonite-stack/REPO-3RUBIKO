@@ -1,5 +1,11 @@
 ---
-/* TODO: reemplazar con historia/valores reales de la empresa */
+/*
+  Sección "Nosotros" — fase 2 del arco (Claro).
+  Fondo: 03_backgrounds/bg_about_warm_concrete.png (mobile: bg_about_mobile.png)
+  — PENDIENTE: subir esos assets a public/backgrounds/ y descomentar el
+  background-image de abajo. El kit no traía copy para esta sección
+  (según el reporte de auditoría), así que el texto es placeholder.
+*/
 const stats = [
   { value: "+10", label: "años de experiencia" },
   { value: "+50", label: "proyectos entregados" },
@@ -7,17 +13,21 @@ const stats = [
 ];
 ---
 
-<section id="nosotros" class="border-y border-[var(--color-border)] bg-[var(--color-surface)]">
+<section
+  id="nosotros"
+  class="relative overflow-hidden bg-[var(--color-warm-white)] text-[#1a1a1a]"
+  style="/* TODO: background-image: url('/backgrounds/bg_about_warm_concrete.png'); background-size: cover; */"
+>
   <div class="mx-auto grid max-w-6xl gap-16 px-6 py-24 sm:px-10 lg:grid-cols-2">
     <div>
-      <p class="reveal font-[var(--font-mono)] text-sm uppercase tracking-[0.2em] text-[var(--color-accent)]">
+      <p class="reveal font-[var(--font-mono)] text-sm uppercase tracking-[0.2em] text-[color:#7a8a2e]">
         Nosotros
       </p>
-      <h2 class="reveal mt-3 font-[var(--font-display)] text-3xl font-semibold text-[var(--color-text)] sm:text-4xl">
+      <h2 class="reveal mt-3 font-[var(--font-display)] text-3xl font-semibold sm:text-4xl">
         Precisión en cada etapa del proyecto
       </h2>
-      <p class="reveal mt-6 text-[var(--color-text-muted)]">
-        {/* TODO: texto real "quiénes somos" */}
+      <p class="reveal mt-6 max-w-md text-[#4a4a45]">
+        {/* TODO: texto real — el kit no incluía copy para esta sección */}
         Un equipo técnico enfocado en resolver proyectos complejos con
         procesos claros, comunicación directa y estándares de calidad
         verificables en cada etapa.
@@ -27,11 +37,11 @@ const stats = [
     <div class="grid grid-cols-3 gap-6">
       {
         stats.map((stat) => (
-          <div class="reveal rounded-[var(--radius-lg)] border border-[var(--color-border)] bg-[var(--color-surface-2)] p-6 text-center">
-            <p class="font-[var(--font-display)] text-3xl font-semibold text-[var(--color-accent-strong)]">
+          <div class="reveal rounded-[var(--radius-lg)] border border-black/10 bg-white/60 p-6 text-center backdrop-blur-sm">
+            <p class="font-[var(--font-display)] text-3xl font-semibold text-[color:#7a8a2e]">
               {stat.value}
             </p>
-            <p class="mt-2 text-sm text-[var(--color-text-muted)]">{stat.label}</p>
+            <p class="mt-2 text-sm text-[#4a4a45]">{stat.label}</p>
           </div>
         ))
       }

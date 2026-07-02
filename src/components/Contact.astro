@@ -1,59 +1,62 @@
-<section id="contacto" class="mx-auto max-w-6xl px-6 py-24 sm:px-10">
+<section
+  id="contacto"
+  class="relative overflow-hidden bg-[var(--color-sunrise)]"
+  style="/* TODO: background-image: url('/backgrounds/bg_cta_sunrise.jpg'); background-size: cover; */"
+>
+<div class="mx-auto max-w-6xl px-6 py-24 sm:px-10">
   <div class="grid gap-16 lg:grid-cols-2">
     <div>
-      <p class="reveal font-[var(--font-mono)] text-sm uppercase tracking-[0.2em] text-[var(--color-accent)]">
+      <p class="reveal font-[var(--font-mono)] text-sm uppercase tracking-[0.2em] text-[#3a2410]">
         Contacto
       </p>
-      <h2 class="reveal mt-3 font-[var(--font-display)] text-3xl font-semibold text-[var(--color-text)] sm:text-4xl">
+      <h2 class="reveal mt-3 font-[var(--font-display)] text-3xl font-semibold text-[#1a1006] sm:text-4xl">
         Conversemos tu proyecto
       </h2>
-      <p class="reveal mt-6 max-w-md text-[var(--color-text-muted)]">
+      <p class="reveal mt-6 max-w-md text-[#3a2410]">
         Cuéntanos qué necesitas y te contactamos a la brevedad.
       </p>
     </div>
 
     <form id="contact-form" class="reveal space-y-5">
       <div>
-        <label for="name" class="mb-2 block text-sm text-[var(--color-text-muted)]">Nombre</label>
+        <label for="name" class="mb-2 block text-sm text-[#3a2410]">Nombre</label>
         <input
           id="name"
           name="name"
           type="text"
           required
-          class="w-full rounded-[var(--radius-sm)] border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3 text-[var(--color-text)] outline-none focus-visible:border-[var(--color-accent-strong)]"
+          class="w-full rounded-[var(--radius-sm)] border border-black/15 bg-white/70 px-4 py-3 text-[#1a1006] outline-none backdrop-blur-sm focus-visible:border-[#1a1006]"
         />
       </div>
       <div>
-        <label for="email" class="mb-2 block text-sm text-[var(--color-text-muted)]">Correo</label>
+        <label for="email" class="mb-2 block text-sm text-[#3a2410]">Correo</label>
         <input
           id="email"
           name="email"
           type="email"
           required
-          class="w-full rounded-[var(--radius-sm)] border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3 text-[var(--color-text)] outline-none focus-visible:border-[var(--color-accent-strong)]"
+          class="w-full rounded-[var(--radius-sm)] border border-black/15 bg-white/70 px-4 py-3 text-[#1a1006] outline-none backdrop-blur-sm focus-visible:border-[#1a1006]"
         />
       </div>
       <div>
-        <label for="message" class="mb-2 block text-sm text-[var(--color-text-muted)]">Mensaje</label>
+        <label for="message" class="mb-2 block text-sm text-[#3a2410]">Mensaje</label>
         <textarea
           id="message"
           name="message"
           rows="4"
           required
-          class="w-full rounded-[var(--radius-sm)] border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3 text-[var(--color-text)] outline-none focus-visible:border-[var(--color-accent-strong)]"
+          class="w-full rounded-[var(--radius-sm)] border border-black/15 bg-white/70 px-4 py-3 text-[#1a1006] outline-none backdrop-blur-sm focus-visible:border-[#1a1006]"
         ></textarea>
       </div>
 
-      <button
-        type="submit"
-        class="w-full rounded-[var(--radius-sm)] bg-[var(--color-accent)] px-6 py-3 font-medium text-[var(--color-ink)] transition-colors hover:bg-[var(--color-accent-strong)] disabled:opacity-50"
-      >
+      <button type="submit" class="w-full rounded-[var(--radius-sm)] bg-[#1a1006] px-6 py-3 font-medium text-white transition-opacity hover:opacity-90 disabled:opacity-50">
         Enviar mensaje
       </button>
 
-      <p id="form-status" role="status" class="text-sm text-[var(--color-text-muted)]"></p>
+      <p id="form-status" role="status" class="text-sm text-[#3a2410]"></p>
     </form>
   </div>
+</div>
 </section>
 
 <script>

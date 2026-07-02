@@ -1,40 +1,44 @@
 ---
-/* TODO: reemplazar con los servicios reales una vez que Antigravity
-   reporte el contenido encontrado en D:\3rubiko */
+/*
+  Sección "Servicios" — fase 3 del arco (Noche profunda).
+  Fondo: 03_backgrounds/bg_services_night.jpg (mobile: bg_services_night_mobile.jpg)
+  Íconos: 05_icons (outline, stroke 1.6px, viewBox 24x24) — usa
+  arquitectura.svg, planos.svg, diseno.svg, construccion.svg.
+  PENDIENTE: subir esos SVG a public/icons/ y el fondo a public/backgrounds/.
+*/
 const services = [
-  {
-    name: "Diseño e ingeniería",
-    description: "Planificación técnica y desarrollo de proyectos a medida.",
-  },
-  {
-    name: "Ejecución de obra",
-    description: "Construcción y montaje con control de calidad en cada etapa.",
-  },
-  {
-    name: "Mantención",
-    description: "Soporte técnico continuo posterior a la entrega del proyecto.",
-  },
+  { name: "Arquitectura", description: "Planificación técnica y desarrollo de proyectos a medida.", icon: "arquitectura" },
+  { name: "Diseño", description: "Espacios funcionales pensados desde el detalle.", icon: "diseno" },
+  { name: "Construcción", description: "Ejecución y montaje con control de calidad en cada etapa.", icon: "construccion" },
 ];
 ---
 
-<section id="servicios" class="mx-auto max-w-6xl px-6 py-24 sm:px-10">
-  <p class="reveal font-[var(--font-mono)] text-sm uppercase tracking-[0.2em] text-[var(--color-accent)]">
-    Servicios
-  </p>
-  <h2 class="reveal mt-3 max-w-xl font-[var(--font-display)] text-3xl font-semibold text-[var(--color-text)] sm:text-4xl">
-    Lo que hacemos
-  </h2>
+<section
+  id="servicios"
+  class="relative overflow-hidden bg-[var(--color-carbon)]"
+  style="/* TODO: background-image: url('/backgrounds/bg_services_night.jpg'); background-size: cover; */"
+>
+  <div class="mx-auto max-w-6xl px-6 py-24 sm:px-10">
+    <p class="reveal font-[var(--font-mono)] text-sm uppercase tracking-[0.2em] text-[var(--color-accent)]">
+      Servicios
+    </p>
+    <h2 class="reveal mt-3 max-w-xl font-[var(--font-display)] text-3xl font-semibold text-[var(--color-text)] sm:text-4xl">
+      Lo que hacemos
+    </h2>
 
-  <div class="mt-14 grid gap-6 sm:grid-cols-3">
-    {
-      services.map((service) => (
-        <div class="reveal rounded-[var(--radius-lg)] border border-[var(--color-border)] bg-[var(--color-surface)] p-8">
-          <h3 class="font-[var(--font-display)] text-xl font-semibold text-[var(--color-text)]">
-            {service.name}
-          </h3>
-          <p class="mt-3 text-[var(--color-text-muted)]">{service.description}</p>
-        </div>
-      ))
-    }
+    <div class="mt-14 grid gap-6 sm:grid-cols-3">
+      {
+        services.map((service) => (
+          <div class="reveal rounded-[var(--radius-lg)] border border-[var(--color-border)] bg-[var(--color-surface)] p-8">
+            {/* TODO: reemplazar por <Icon name={service.icon} /> cuando estén los SVG de 05_icons en public/icons/ */}
+            <div class="h-8 w-8 rounded-full border border-[var(--color-accent)]" aria-hidden="true" />
+            <h3 class="mt-5 font-[var(--font-display)] text-xl font-semibold text-[var(--color-text)]">
+              {service.name}
+            </h3>
+            <p class="mt-3 text-[var(--color-text-muted)]">{service.description}</p>
+          </div>
+        ))
+      }
+    </div>
   </div>
 </section>

@@ -1,42 +1,39 @@
 @import "tailwindcss";
 
 /*
-  ── Design tokens — PROVISIONAL ──────────────────────────────────────────
-  Esta paleta y tipografía son un punto de partida razonable para una
-  landing corporativa/industrial mientras Antigravity termina la auditoría
-  de D:\3rubiko (logo, colores de marca, tipografías ya definidas, etc.).
-  En cuanto llegue ese reporte, estos valores se reemplazan aquí y en
-  ningún otro lugar — todo el sitio consume estas variables.
+  ── Design tokens — oficiales del Kit Visual 3Kubiko ─────────────────────
+  Extraídos de 3kubiko_visual_kit/04_ui/tokens.css (auditoría Antigravity).
+  Todo el sitio consume estas variables — para retocar la paleta, este es
+  el único lugar que hay que tocar.
   ────────────────────────────────────────────────────────────────────────
 */
 :root {
-  /* Base */
-  --color-ink: #10141a;         /* fondo principal, grafito casi negro */
-  --color-surface: #171c24;     /* superficies elevadas / cards */
-  --color-surface-2: #1f2530;   /* superficies sobre superficies */
-  --color-border: #2a313d;
+  /* Paleta base — arco noche → amanecer */
+  --color-carbon: #080b12;      /* fondo oscuro, Hero / Servicios */
+  --color-midnight: #0b2346;    /* azul profundo */
+  --color-twilight: #34445d;    /* azul crepúsculo, sección Proceso */
+  --color-dawn-lilac: #8f96c0;  /* lila amanecer */
+  --color-warm-light: #d99748;  /* naranja cálido — solo luz ambiental, NUNCA botones */
+  --color-sunrise: #e28756;     /* amanecer — gradientes de CTA */
+  --color-accent: #a6c23a;      /* verde oliva — acento UI y botones primarios */
+  --color-accent-strong: #b7d94f;
+  --color-warm-white: #f6f4ee;  /* blanco corporativo cálido, sección Nosotros */
+  --color-concrete: #d8d7d1;
+  --color-muted: #9ea4ad;       /* texto secundario */
 
-  /* Texto */
+  /* Alias de compatibilidad con componentes existentes */
+  --color-ink: var(--color-carbon);
+  --color-surface: #10141c;
+  --color-surface-2: #171d28;
+  --color-border: #262d3a;
   --color-text: #eef1f5;
-  --color-text-muted: #9aa5b3;
-
-  /* Acento — verde lima/oliva (según referencia de diseño del hero) */
-  --color-accent: #9fcb3b;
-  --color-accent-strong: #b4e34f;
-
-  /* Acento secundario — cobre/latón, para detalles cálidos puntuales */
-  --color-accent-warm: #c98a4b;
-
-  /* Estado */
-  --color-success: #4caf7d;
-  --color-danger: #d1604f;
+  --color-text-muted: var(--color-muted);
 
   /* Tipografía */
-  --font-display: "Space Grotesk", "Arial Narrow", sans-serif;
+  --font-display: "Space Grotesk", "Inter", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
 
-  /* Ritmo */
   --radius-sm: 4px;
   --radius-md: 8px;
   --radius-lg: 16px;
@@ -59,7 +56,7 @@ html {
 }
 
 body {
-  background: var(--color-ink);
+  background: var(--color-carbon);
   color: var(--color-text);
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
@@ -67,17 +64,53 @@ body {
 
 ::selection {
   background: var(--color-accent);
-  color: var(--color-ink);
+  color: var(--color-carbon);
 }
 
-/* Foco visible accesible, sin depender del outline por defecto del navegador */
 :focus-visible {
   outline: 2px solid var(--color-accent-strong);
   outline-offset: 2px;
   border-radius: var(--radius-sm);
 }
 
-/* Utilidades de reveal en scroll (se activan con IntersectionObserver, ver Layout) */
+/* Botón primario — spec del kit (04_ui/tokens.css) */
+.btn-primary {
+  border: 1px solid var(--color-accent);
+  background: var(--color-accent);
+  color: #111;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  transition: transform 0.2s ease, filter 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+  box-shadow: 0 12px 35px rgba(166, 194, 58, 0.24);
+}
+
+/* Botón secundario — variante glass */
+.btn-secondary {
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  background: rgba(8, 11, 18, 0.22);
+  backdrop-filter: blur(12px);
+  color: #fff;
+  border-radius: var(--radius-sm);
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+.btn-secondary:hover {
+  border-color: var(--color-accent-strong);
+  background: rgba(8, 11, 18, 0.35);
+}
+
+/* Tarjeta glass — sección Proceso (twilight) */
+.card-glass {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.025));
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.18);
+  border-radius: var(--radius-lg);
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(16px);
