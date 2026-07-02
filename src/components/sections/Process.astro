@@ -1,0 +1,162 @@
+---
+// src/components/sections/Process.astro
+---
+
+<section id="proceso" class="relative w-full bg-[#090909] py-24 sm:py-32 overflow-hidden">
+  <div class="mx-auto w-full max-w-[1440px] px-6 sm:px-10 lg:px-16 xl:px-20 relative z-10">
+    
+    <header class="mb-16 lg:mb-24 flex flex-col items-start max-w-[700px]">
+      <p class="text-sm font-semibold tracking-[0.2em] uppercase text-[#A7C520] mb-4">
+        Proceso
+      </p>
+      <div class="h-[2px] w-12 bg-[#A7C520] mb-6"></div>
+      <h2 class="text-[#F3F3EF] font-[var(--font-display)] font-semibold tracking-tight" style="font-size: clamp(2.8rem, 5vw, 5.2rem); line-height: 1.1;">
+        Cómo trabajamos
+      </h2>
+      <p class="mt-6 text-[#A2A49F] text-lg leading-relaxed">
+        Un proceso claro, técnico y transparente para desarrollar cada proyecto con precisión, control y confianza.
+      </p>
+    </header>
+
+    <div class="relative">
+      {/* Línea conectora */}
+      <div class="absolute left-[39px] md:left-auto md:top-[90px] md:w-full h-full md:h-[1px] w-[1px] bg-[#A7C520]/25 z-0 hidden md:block" aria-hidden="true"></div>
+      <div class="absolute left-[39px] md:hidden h-full w-[1px] bg-[#A7C520]/25 z-0" aria-hidden="true"></div>
+
+      <ol class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 relative z-10">
+        
+        {/* ETAPA 1 */}
+        <li class="group relative flex flex-col h-auto lg:h-[450px] w-full rounded-[24px] border border-white/10 bg-[rgba(17,19,21,0.92)] p-8 transition-all duration-400 hover:-translate-y-1 hover:border-[#A7C520]/48 overflow-hidden">
+          {/* Textura */}
+          <div class="absolute bottom-0 left-0 w-32 h-32 opacity-5 group-hover:opacity-10 transition-opacity duration-400 pointer-events-none" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 12px 12px;"></div>
+          
+          <div class="flex items-center gap-4 mb-8">
+            <div class="relative flex h-[60px] w-[60px] items-center justify-center rounded-full border border-[#A7C520]/30 bg-transparent transition-colors duration-400 group-hover:bg-[#A7C520]/10">
+              <span class="absolute -top-3 -right-2 text-[#A7C520] text-sm font-bold bg-[#090909] px-1 group-hover:brightness-125 transition-all">01</span>
+              <svg class="h-[28px] w-[28px] text-[#F3F3EF]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg>
+            </div>
+            <span class="text-xs uppercase tracking-widest text-[#A2A49F]">Etapa 01</span>
+          </div>
+
+          <h3 class="text-[26px] font-semibold text-[#F3F3EF] mb-4">Diagnóstico</h3>
+          <p class="text-[17px] text-[#A2A49F] leading-relaxed line-clamp-4">
+            Levantamos el contexto, analizamos las necesidades y definimos los requerimientos del proyecto.
+          </p>
+
+          <div class="mt-auto pt-6 flex justify-between items-end">
+            <div class="h-[2px] w-8 bg-white/10 transition-all duration-400 group-hover:w-16 group-hover:bg-[#A7C520]"></div>
+            <svg class="h-4 w-4 text-[#A2A49F] opacity-50 group-hover:opacity-100 group-hover:text-[#A7C520] transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path></svg>
+          </div>
+        </li>
+
+        {/* ETAPA 2 */}
+        <li class="group relative flex flex-col h-auto lg:h-[450px] w-full rounded-[24px] border border-white/10 bg-[rgba(17,19,21,0.92)] p-8 transition-all duration-400 hover:-translate-y-1 hover:border-[#A7C520]/48 overflow-hidden">
+          {/* Textura */}
+          <div class="absolute top-0 right-0 w-32 h-32 opacity-5 group-hover:opacity-10 transition-opacity duration-400 pointer-events-none" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 12px 12px;"></div>
+          
+          <div class="flex items-center gap-4 mb-8">
+            <div class="relative flex h-[60px] w-[60px] items-center justify-center rounded-full border border-[#A7C520]/30 bg-transparent transition-colors duration-400 group-hover:bg-[#A7C520]/10">
+              <span class="absolute -top-3 -right-2 text-[#A7C520] text-sm font-bold bg-[#090909] px-1 group-hover:brightness-125 transition-all">02</span>
+              <svg class="h-[28px] w-[28px] text-[#F3F3EF]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+            </div>
+            <span class="text-xs uppercase tracking-widest text-[#A2A49F]">Etapa 02</span>
+          </div>
+
+          <h3 class="text-[26px] font-semibold text-[#F3F3EF] mb-4">Propuesta y presupuesto</h3>
+          <p class="text-[17px] text-[#A2A49F] leading-relaxed line-clamp-4">
+            Desarrollamos una propuesta técnica y económica clara, detallada y sin letra chica.
+          </p>
+
+          <div class="mt-auto pt-6 flex justify-between items-end">
+            <div class="h-[2px] w-8 bg-white/10 transition-all duration-400 group-hover:w-16 group-hover:bg-[#A7C520]"></div>
+            <svg class="h-4 w-4 text-[#A2A49F] opacity-50 group-hover:opacity-100 group-hover:text-[#A7C520] transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path></svg>
+          </div>
+        </li>
+
+        {/* ETAPA 3 */}
+        <li class="group relative flex flex-col h-auto lg:h-[450px] w-full rounded-[24px] border border-white/10 bg-[rgba(17,19,21,0.92)] p-8 transition-all duration-400 hover:-translate-y-1 hover:border-[#A7C520]/48 overflow-hidden">
+          {/* Textura */}
+          <div class="absolute bottom-0 right-0 w-32 h-32 opacity-5 group-hover:opacity-10 transition-opacity duration-400 pointer-events-none" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 12px 12px;"></div>
+          
+          <div class="flex items-center gap-4 mb-8">
+            <div class="relative flex h-[60px] w-[60px] items-center justify-center rounded-full border border-[#A7C520]/30 bg-transparent transition-colors duration-400 group-hover:bg-[#A7C520]/10">
+              <span class="absolute -top-3 -right-2 text-[#A7C520] text-sm font-bold bg-[#090909] px-1 group-hover:brightness-125 transition-all">03</span>
+              <svg class="h-[28px] w-[28px] text-[#F3F3EF]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 2l-7 4v12l7 4 7-4V6l-7-4z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M12 12l-7-4"></path><path stroke-linecap="round" stroke-linejoin="round" d="M12 12v12"></path><path stroke-linecap="round" stroke-linejoin="round" d="M12 12l7-4"></path></svg>
+            </div>
+            <span class="text-xs uppercase tracking-widest text-[#A2A49F]">Etapa 03</span>
+          </div>
+
+          <h3 class="text-[26px] font-semibold text-[#F3F3EF] mb-4">Ejecución</h3>
+          <p class="text-[17px] text-[#A2A49F] leading-relaxed line-clamp-4">
+            Coordinamos la obra con seguimiento constante, planificación y control de calidad en cada etapa.
+          </p>
+
+          <div class="mt-auto pt-6 flex justify-between items-end">
+            <div class="h-[2px] w-8 bg-white/10 transition-all duration-400 group-hover:w-16 group-hover:bg-[#A7C520]"></div>
+            <svg class="h-4 w-4 text-[#A2A49F] opacity-50 group-hover:opacity-100 group-hover:text-[#A7C520] transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path></svg>
+          </div>
+        </li>
+
+        {/* ETAPA 4 */}
+        <li class="group relative flex flex-col h-auto lg:h-[450px] w-full rounded-[24px] border border-white/10 bg-[rgba(17,19,21,0.92)] p-8 transition-all duration-400 hover:-translate-y-1 hover:border-[#A7C520]/48 overflow-hidden">
+          {/* Textura */}
+          <div class="absolute top-0 right-0 w-32 h-32 opacity-5 group-hover:opacity-10 transition-opacity duration-400 pointer-events-none" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 12px 12px;"></div>
+          
+          <div class="flex items-center gap-4 mb-8">
+            <div class="relative flex h-[60px] w-[60px] items-center justify-center rounded-full border border-[#A7C520]/30 bg-transparent transition-colors duration-400 group-hover:bg-[#A7C520]/10">
+              <span class="absolute -top-3 -right-2 text-[#A7C520] text-sm font-bold bg-[#090909] px-1 group-hover:brightness-125 transition-all">04</span>
+              <svg class="h-[28px] w-[28px] text-[#F3F3EF]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"></path></svg>
+            </div>
+            <span class="text-xs uppercase tracking-widest text-[#A2A49F]">Etapa 04</span>
+          </div>
+
+          <h3 class="text-[26px] font-semibold text-[#F3F3EF] mb-4">Entrega</h3>
+          <p class="text-[17px] text-[#A2A49F] leading-relaxed line-clamp-4">
+            Realizamos el cierre formal del proyecto y entregamos acompañamiento posterior para tu tranquilidad.
+          </p>
+
+          <div class="mt-auto pt-6 flex justify-between items-end">
+            <div class="h-[2px] w-8 bg-white/10 transition-all duration-400 group-hover:w-16 group-hover:bg-[#A7C520]"></div>
+            <svg class="h-4 w-4 text-[#A2A49F] opacity-50 group-hover:opacity-100 group-hover:text-[#A7C520] transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+          </div>
+        </li>
+
+      </ol>
+    </div>
+
+    {/* CTA Final */}
+    <div class="mt-20 lg:mt-32 border-t border-white/10 pt-10 flex flex-col md:flex-row items-center justify-between gap-6">
+      <p class="text-[#F3F3EF] text-xl font-semibold">¿Tienes un proyecto en mente?</p>
+      <a 
+        href="#contacto" 
+        class="group flex items-center justify-center gap-2 rounded-lg bg-[#A7C520] px-6 h-12 text-[#090909] font-medium transition-colors duration-300 hover:bg-[#b8d633] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#A7C520] focus-visible:ring-offset-2 focus-visible:ring-offset-[#090909] w-full md:w-auto"
+      >
+        Conversemos sobre tu proyecto
+        <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  /* Animación de entrada con Stagger */
+  @media (prefers-reduced-motion: no-preference) {
+    #proceso li {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.6s ease-out forwards;
+    }
+    #proceso li:nth-child(1) { animation-delay: 0.1s; }
+    #proceso li:nth-child(2) { animation-delay: 0.2s; }
+    #proceso li:nth-child(3) { animation-delay: 0.3s; }
+    #proceso li:nth-child(4) { animation-delay: 0.4s; }
+    
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+</style>
