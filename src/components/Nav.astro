@@ -1,20 +1,41 @@
-<header class="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-[var(--color-ink)]/70 backdrop-blur">
-  <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 sm:px-10">
-    <a href="#" class="flex items-center">
-      <img src="/brand/logo_on_dark.png" alt="3Kubiko" class="h-8 w-auto object-contain" />
+<header id="main-header" class="fixed inset-x-0 top-0 z-50 transition-all duration-300 bg-transparent py-4">
+  <!-- Gradiente sutil para asegurar lectura en el hero -->
+  <div class="absolute inset-0 bg-gradient-to-b from-black/60 to-transparent pointer-events-none -z-10"></div>
+  
+  <nav class="mx-auto flex max-w-[1440px] items-center justify-between px-6 sm:px-10">
+    <a href="#" class="flex items-center transition-transform hover:scale-105">
+      {/* Se aumentó el tamaño del logo de h-8 a h-16/h-20 para mayor claridad */}
+      <img src="/brand/logo_on_dark.png" alt="3Kubiko" class="h-16 sm:h-20 w-auto object-contain drop-shadow-lg" />
     </a>
-    <ul class="hidden gap-8 text-sm text-[var(--color-text-muted)] sm:flex">
-      <li><a href="#nosotros" class="transition-colors hover:text-[var(--color-text)]">Nosotros</a></li>
-      <li><a href="#servicios" class="transition-colors hover:text-[var(--color-text)]">Servicios</a></li>
-      <li><a href="#proyectos" class="transition-colors hover:text-[var(--color-text)]">Proyectos</a></li>
-      <li><a href="#proceso" class="transition-colors hover:text-[var(--color-text)]">Proceso</a></li>
-      <li><a href="#contacto" class="transition-colors hover:text-[var(--color-text)]">Contacto</a></li>
+    
+    <ul class="hidden gap-10 text-[15px] font-medium text-white/80 sm:flex">
+      <li><a href="#nosotros" class="transition-colors hover:text-[var(--color-accent)]">Nosotros</a></li>
+      <li><a href="#servicios" class="transition-colors hover:text-[var(--color-accent)]">Servicios</a></li>
+      <li><a href="#proyectos" class="transition-colors hover:text-[var(--color-accent)]">Proyectos</a></li>
+      <li><a href="#proceso" class="transition-colors hover:text-[var(--color-accent)]">Proceso</a></li>
+      <li><a href="#contacto" class="transition-colors hover:text-[var(--color-accent)]">Contacto</a></li>
     </ul>
+    
     <a
       href="#contacto"
-      class="rounded-[var(--radius-sm)] border border-[var(--color-border)] px-4 py-2 text-sm font-medium text-[var(--color-text)] transition-colors hover:border-[var(--color-accent-strong)]"
+      class="hidden sm:inline-block rounded-full border border-white/20 bg-white/5 backdrop-blur-md px-6 py-2.5 text-sm font-semibold text-white transition-all hover:border-[var(--color-accent)] hover:bg-[var(--color-accent)] hover:text-black"
     >
-      Cotizar
+      Cotizar proyecto
     </a>
   </nav>
 </header>
+
+<script>
+  // Script para añadir efecto Glassmorphism al hacer scroll
+  const header = document.getElementById('main-header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      header?.classList.add('bg-[#111111]/85', 'backdrop-blur-md', 'border-b', 'border-white/10', 'shadow-lg');
+      header?.classList.remove('bg-transparent', 'py-4');
+      header?.classList.add('py-2');
+    } else {
+      header?.classList.remove('bg-[#111111]/85', 'backdrop-blur-md', 'border-b', 'border-white/10', 'shadow-lg', 'py-2');
+      header?.classList.add('bg-transparent', 'py-4');
+    }
+  });
+</script>
