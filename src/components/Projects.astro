@@ -8,10 +8,16 @@ import { ThreeDPhotoCarousel } from './ui/3d-carousel';
 
 <section
   id="proyectos"
-  class="relative overflow-hidden bg-[var(--color-carbon)]"
-  style="background-image: url('/backgrounds/bg_projects_topographic.png'); background-size: cover; background-position: center;"
+  class="relative overflow-hidden bg-[#111111]"
 >
-  <div class="mx-auto w-full px-0 py-24 sm:px-0">
+  {/* Imagen de fondo con overlay para asegurar el contraste perfecto del carrusel */}
+  <div class="absolute inset-0 z-0">
+    <div class="absolute inset-0 bg-gradient-to-b from-[#111111] via-transparent to-[#111111] z-10"></div>
+    <div class="absolute inset-0 bg-[#111111]/60 z-10"></div>
+    <img src="/backgrounds/bg_projects_topographic.png" alt="" class="w-full h-full object-cover opacity-80" />
+  </div>
+
+  <div class="relative z-20 mx-auto w-full px-0 py-24 sm:py-32 sm:px-0">
     <div class="mx-auto max-w-6xl px-6 sm:px-10">
       <p class="reveal font-[var(--font-mono)] text-sm uppercase tracking-[0.2em] text-[var(--color-accent)]">
         Proyectos Destacados

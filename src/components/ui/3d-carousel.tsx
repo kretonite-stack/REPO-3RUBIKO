@@ -97,9 +97,48 @@ const Carousel = memo(
       (value) => `rotate3d(0, 1, 0, ${value}deg)`
     )
 
+    const handleNext = () => {
+      if (!isCarouselActive) return
+      const currentRotation = rotation.get()
+      controls.start({
+        rotateY: currentRotation - (360 / faceCount),
+        transition: { type: "spring", stiffness: 100, damping: 30, mass: 0.1 },
+      })
+    }
+
+    const handlePrev = () => {
+      if (!isCarouselActive) return
+      const currentRotation = rotation.get()
+      controls.start({
+        rotateY: currentRotation + (360 / faceCount),
+        transition: { type: "spring", stiffness: 100, damping: 30, mass: 0.1 },
+      })
+    }
+
     return (
-      <div
-        className="flex h-full items-center justify-center bg-transparent"
+      <div className="relative flex h-full w-full items-center justify-center">
+        {/* Botones de navegación */}
+        {isCarouselActive && (
+          <>
+            <button
+              onClick={handlePrev}
+              className="absolute left-2 md:left-8 z-[60] flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-white transition-all hover:bg-[#8CA23A]/90 hover:border-[#8CA23A] hover:scale-110 hover:shadow-[0_0_20px_rgba(140,162,58,0.4)]"
+              aria-label="Anterior proyecto"
+            >
+              <svg className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" /></svg>
+            </button>
+            <button
+              onClick={handleNext}
+              className="absolute right-2 md:right-8 z-[60] flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-white transition-all hover:bg-[#8CA23A]/90 hover:border-[#8CA23A] hover:scale-110 hover:shadow-[0_0_20px_rgba(140,162,58,0.4)]"
+              aria-label="Siguiente proyecto"
+            >
+              <svg className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
+            </button>
+          </>
+        )}
+        
+        <div
+          className="flex h-full items-center justify-center bg-transparent"
         style={{
           perspective: "1000px",
           transformStyle: "preserve-3d",
@@ -158,6 +197,7 @@ const Carousel = memo(
             </motion.div>
           ))}
         </motion.div>
+      </div>
       </div>
     )
   }
