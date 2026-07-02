@@ -149,7 +149,8 @@
     status.classList.remove('hidden', 'text-[#D64545]', 'text-[#708C2F]');
     status.classList.add('text-[#66665F]');
 
-    const { error } = await supabase.from("contact_messages").insert({
+    // 1. Guardar en Supabase (Historial/Base de datos)
+    const { error: supabaseError } = await supabase.from("contact_messages").insert({
       name: formData.get("name"),
       email: formData.get("email"),
       phone: formData.get("phone"),
@@ -157,9 +158,26 @@
       message: formData.get("message"),
     });
 
+    // 2. Enviar correo a 3Kubiko.ventas@gmail.com usando FormSubmit (AJAX)
+    const emailResponse = await fetch("https://formsubmit.co/ajax/3Kubiko.ventas@gmail.com", {
+      method: "POST",
+      headers: { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        Nombre: formData.get("name"),
+        Correo: formData.get("email"),
+        Teléfono: formData.get("phone"),
+        Proyecto: formData.get("project_type"),
+        Mensaje: formData.get("message"),
+        _subject: "Nuevo mensaje de contacto web - 3Kubiko"
+      })
+    });
+
     status.classList.remove('text-[#66665F]');
 
-    if (error) {
+    if (supabaseError || !emailResponse.ok) {
       status.textContent = "No pudimos enviar tu mensaje. Inténtalo nuevamente.";
       status.classList.add('text-[#D64545]');
     } else {
