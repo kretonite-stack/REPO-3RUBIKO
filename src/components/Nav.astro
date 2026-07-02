@@ -44,9 +44,10 @@
 
 .brand__logo {
   display: block;
-  width: clamp(145px, 14vw, 190px);
-  height: auto;
-  max-height: 58px;
+  /* Se aumenta drásticamente el tamaño base ya que la imagen es cuadrada con padding interno */
+  height: 96px; 
+  width: auto;
+  max-height: none;
   object-fit: contain;
   object-position: left center;
   background: transparent;
@@ -56,8 +57,7 @@
 
 @media (max-width: 768px) {
   .brand__logo {
-    width: 145px;
-    max-height: 44px;
+    height: 72px;
   }
 }
 </style>
