@@ -1,0 +1,147 @@
+---
+// src/components/sections/About.astro
+---
+
+<section id="nosotros" class="relative w-full bg-[#F4F3EE] py-24 sm:py-32 overflow-hidden">
+  
+  {/* Textura de grilla sutil */}
+  <div class="absolute inset-0 pointer-events-none opacity-[0.035]" style="background-image: linear-gradient(#0A0A0A 1px, transparent 1px), linear-gradient(90deg, #0A0A0A 1px, transparent 1px); background-size: 40px 40px;"></div>
+
+  <div class="relative z-10 mx-auto w-full max-w-[1440px] px-6 sm:px-10 lg:px-16 xl:px-20">
+    
+    <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_minmax(460px,0.9fr)] gap-16 lg:gap-20 items-center">
+      
+      {/* Columna Izquierda - Contenido */}
+      <div class="flex flex-col items-start max-w-[680px]">
+        <header>
+          <p class="text-[12px] md:text-[14px] font-semibold tracking-[0.2em] uppercase text-[#91A51C] mb-4">
+            Nosotros
+          </p>
+          <h2 class="text-[#0A0A0A] font-[var(--font-display)] font-semibold tracking-tight" style="font-size: clamp(2.7rem, 4.6vw, 5.1rem); line-height: 0.98;">
+            Precisión técnica en cada etapa del proyecto.
+          </h2>
+        </header>
+
+        <div class="mt-8 flex gap-6">
+          <div class="w-[2px] bg-[#91A51C] hidden sm:block flex-shrink-0 mt-2 h-[120px]"></div>
+          <div class="flex flex-col gap-6">
+            <p class="text-[#62645F] leading-[1.65]" style="font-size: clamp(1rem, 1.25vw, 1.2rem);">
+              En 3Kubiko desarrollamos soluciones de diseño y construcción mediante procesos claros, coordinación técnica y comunicación directa. Acompañamos cada proyecto desde su evaluación inicial hasta la ejecución y entrega, buscando resultados funcionales, durables y coherentes con las necesidades de cada cliente.
+            </p>
+            <p class="text-[#62645F] leading-[1.65]" style="font-size: clamp(1rem, 1.25vw, 1.2rem);">
+              Integramos planificación, diseño, materialidad y construcción para reducir imprevistos, optimizar recursos y mantener el control durante todo el proceso.
+            </p>
+          </div>
+        </div>
+
+        <p class="mt-10 text-[11px] font-medium tracking-[0.15em] text-[#0A0A0A] opacity-70">
+          DISEÑO · PLANIFICACIÓN · CONSTRUCCIÓN
+        </p>
+
+        <a href="#proceso" class="group mt-10 inline-flex items-center gap-2 text-[15px] font-medium text-[#0A0A0A] border-b border-[#0A0A0A]/30 pb-1 transition-all hover:border-[#91A51C] hover:text-[#91A51C] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#91A51C]">
+          Conoce nuestro proceso
+          <svg class="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1 group-hover:translate-y-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 7l10 10m0 0V7m0 10H7"></path></svg>
+        </a>
+      </div>
+
+      {/* Columna Derecha - Imagen */}
+      <figure class="relative w-full overflow-hidden rounded-[12px] aspect-[4/5] sm:aspect-[3/4] lg:aspect-auto lg:h-[700px] shadow-sm group">
+        <img src="/carrusel/proyecto-1.png" alt="Proyecto residencial desarrollado por 3Kubiko" class="w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-[1.03]" loading="lazy" decoding="async" />
+        <figcaption class="absolute bottom-4 left-4 bg-[#0A0A0A] px-4 py-2 text-white text-[10px] sm:text-[11px] font-medium tracking-widest uppercase rounded-sm">
+          Proyectos desarrollados por 3Kubiko
+        </figcaption>
+      </figure>
+
+    </div>
+
+    {/* Principios - Bloque Inferior */}
+    <div class="mt-24 lg:mt-32 pt-16 border-t border-[rgba(10,10,10,0.12)]">
+      <dl class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-12 gap-y-12">
+        
+        {/* Principio 1 */}
+        <div class="group relative flex flex-col items-start border-l-2 border-transparent pl-4 transition-colors hover:border-[#91A51C]">
+          <dt class="flex flex-col gap-2">
+            <span class="text-sm font-bold text-[#91A51C] group-hover:brightness-110 transition-all">01</span>
+            <span class="text-xl font-semibold text-[#0A0A0A]">Planificación técnica</span>
+          </dt>
+          <dd class="mt-4 text-[15px] leading-relaxed text-[#62645F]">
+            Análisis, definición de requerimientos y organización previa del proyecto.
+          </dd>
+        </div>
+
+        {/* Principio 2 */}
+        <div class="group relative flex flex-col items-start border-l-2 border-transparent pl-4 transition-colors hover:border-[#91A51C]">
+          <dt class="flex flex-col gap-2">
+            <span class="text-sm font-bold text-[#91A51C] group-hover:brightness-110 transition-all">02</span>
+            <span class="text-xl font-semibold text-[#0A0A0A]">Diseño funcional</span>
+          </dt>
+          <dd class="mt-4 text-[15px] leading-relaxed text-[#62645F]">
+            Soluciones pensadas desde el uso, la materialidad y el entorno.
+          </dd>
+        </div>
+
+        {/* Principio 3 */}
+        <div class="group relative flex flex-col items-start border-l-2 border-transparent pl-4 transition-colors hover:border-[#91A51C]">
+          <dt class="flex flex-col gap-2">
+            <span class="text-sm font-bold text-[#91A51C] group-hover:brightness-110 transition-all">03</span>
+            <span class="text-xl font-semibold text-[#0A0A0A]">Control de ejecución</span>
+          </dt>
+          <dd class="mt-4 text-[15px] leading-relaxed text-[#62645F]">
+            Seguimiento de obra, coordinación y revisión en cada etapa.
+          </dd>
+        </div>
+
+        {/* Principio 4 */}
+        <div class="group relative flex flex-col items-start border-l-2 border-transparent pl-4 transition-colors hover:border-[#91A51C]">
+          <dt class="flex flex-col gap-2">
+            <span class="text-sm font-bold text-[#91A51C] group-hover:brightness-110 transition-all">04</span>
+            <span class="text-xl font-semibold text-[#0A0A0A]">Comunicación directa</span>
+          </dt>
+          <dd class="mt-4 text-[15px] leading-relaxed text-[#62645F]">
+            Información clara y acompañamiento durante todo el proyecto.
+          </dd>
+        </div>
+
+      </dl>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  @media (prefers-reduced-motion: no-preference) {
+    #nosotros header {
+      animation: fadeUp 0.7s ease-out forwards;
+    }
+    #nosotros figure {
+      animation: revealMask 0.9s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+      opacity: 0;
+    }
+    #nosotros dl > div {
+      opacity: 0;
+      transform: translateY(15px);
+      animation: fadeUp 0.5s ease-out forwards;
+    }
+    #nosotros dl > div:nth-child(1) { animation-delay: 0.1s; }
+    #nosotros dl > div:nth-child(2) { animation-delay: 0.2s; }
+    #nosotros dl > div:nth-child(3) { animation-delay: 0.3s; }
+    #nosotros dl > div:nth-child(4) { animation-delay: 0.4s; }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes revealMask {
+      0% {
+        opacity: 0;
+        clip-path: inset(0 100% 0 0);
+      }
+      100% {
+        opacity: 1;
+        clip-path: inset(0 0 0 0);
+      }
+    }
+  }
+</style>
