@@ -5,8 +5,8 @@
       
       {/* 1. MARCA */}
       <div class="lg:col-span-4 flex flex-col">
-        <a href="/" aria-label="3Kubiko — Inicio" class="inline-block">
-          <img src="https://res.cloudinary.com/ddqx435i5/image/upload/v1782952665/logo_f6sphu.png" alt="3Kubiko" class="h-[48px] w-auto object-contain object-left" />
+        <a href="/" aria-label="3Kubiko — Inicio" class="inline-block mb-4">
+          <img src="https://res.cloudinary.com/ddqx435i5/image/upload/v1782952665/logo_f6sphu.png" alt="3Kubiko" class="h-[90px] md:h-[130px] w-auto object-contain object-left transition-transform hover:scale-105" />
         </a>
         <p class="mt-6 text-[15px] text-[#E7E7E3] leading-relaxed max-w-sm">
           Diseñamos y construimos espacios que mejoran tu vida. Arquitectura, construcción y remodelación con enfoque sostenible y atención personalizada.
@@ -80,12 +80,12 @@
           </ul>
         </div>
 
-        {/* Proyecto Destacado (solo visible en desktop/tablet grandes para no recargar mobile) */}
-        <div class="hidden sm:block">
+        {/* Proyecto Destacado / Logo Grande */}
+        <div class="hidden sm:flex justify-end items-center h-full">
           <img 
-            src="/carrusel/proyecto-1.png" 
-            alt="Proyecto arquitectónico destacado" 
-            class="w-full aspect-[4/3] object-cover rounded-lg border border-[#2B2B2B]"
+            src="https://res.cloudinary.com/ddqx435i5/image/upload/v1782952665/logo_f6sphu.png" 
+            alt="3Kubiko Logo" 
+            class="w-full max-w-[240px] md:max-w-[320px] object-contain opacity-90 transition-transform duration-500 hover:scale-105"
             loading="lazy"
             decoding="async"
           />
