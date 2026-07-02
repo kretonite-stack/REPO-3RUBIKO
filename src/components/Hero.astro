@@ -41,26 +41,66 @@ const posterUrl = "https://res.cloudinary.com/ddqx435i5/video/upload/so_0/Night_
       izquierda, se disuelve a transparente hacia la derecha */}
   <div class="absolute inset-0 bg-gradient-to-r from-[#04080f]/94 via-[#04080f]/66 to-transparent" />
 
-  <div class="relative z-10 mx-auto w-full max-w-6xl px-6 pt-24 sm:px-10">
-    <div class="max-w-md sm:max-w-lg">
-      <p class="reveal font-[var(--font-mono)] text-sm uppercase tracking-[0.2em] text-[var(--color-accent-strong)]">
-        Arquitectura · Construcción
+  <div class="relative z-10 mx-auto flex h-full w-full max-w-[1440px] flex-col justify-center px-6 pt-24 pb-32 sm:px-10">
+    <div class="max-w-xl sm:max-w-2xl">
+      <p class="reveal font-[var(--font-mono)] text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-accent)]">
+        DISEÑO + CONSTRUCCIÓN EN PERFECTA SINERGIA
       </p>
-      <h1 class="reveal mt-4 font-[var(--font-display)] text-4xl font-semibold leading-[1.05] text-[var(--color-text)] sm:text-5xl">
-        Diseño y construcción integral, a tu medida.
+      <h1 class="reveal mt-4 font-[var(--font-display)] text-[clamp(42px,7vw,72px)] font-bold leading-[1.05] text-[var(--color-text)]">
+        Construimos espacios que <span class="text-[var(--color-accent)]">mejoran tu vida.</span>
       </h1>
-      <p class="reveal mt-6 text-lg text-[var(--color-text-muted)]">
-        Transformamos ideas en espacios funcionales, estéticos y sostenibles con visión técnica, detalle y compromiso.
+      <p class="reveal mt-6 max-w-lg text-lg text-[var(--color-concrete)]">
+        Diseño y construcción integrales con visión técnica, detalle y compromiso. Arquitectura que se vive, construcción que perdura.
       </p>
 
       <div class="reveal mt-10 flex flex-wrap gap-4">
-        <a href="#contacto" class="btn-primary px-6 py-3 font-medium">
-          Conversemos tu proyecto
+        <a href="#proyectos" class="btn-primary inline-flex items-center gap-3 px-6 py-4 font-semibold">
+          Ver proyectos <span>&rarr;</span>
         </a>
-        <a href="#servicios" class="btn-secondary px-6 py-3 font-medium">
-          Ver servicios
+        <a href="#servicios" class="btn-secondary inline-flex items-center gap-3 px-6 py-4 font-semibold">
+          Conocer servicios <span>&rarr;</span>
         </a>
       </div>
     </div>
   </div>
+
+  {/* Row de íconos en el borde inferior */}
+  <div class="absolute bottom-0 left-0 z-10 w-full border-t border-white/10 bg-[#080b12]/60 backdrop-blur-md">
+    <div class="mx-auto flex w-full max-w-[1440px] flex-wrap items-start gap-8 px-6 py-6 sm:px-10 md:gap-16">
+      
+      <div class="flex flex-col gap-2">
+        <img src="/icons/diseno.svg" alt="Diseño" class="h-8 w-8 object-contain" />
+        <div>
+          <span class="block text-sm font-bold uppercase tracking-wider text-[var(--color-text)]">DISEÑO</span>
+          <span class="block text-sm text-[var(--color-muted)]">Arquitectura a medida</span>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <img src="/icons/construccion.svg" alt="Construcción" class="h-8 w-8 object-contain" />
+        <div>
+          <span class="block text-sm font-bold uppercase tracking-wider text-[var(--color-text)]">CONSTRUCCIÓN</span>
+          <span class="block text-sm text-[var(--color-muted)]">Ejecución precisa y eficiente</span>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <img src="/icons/remodelacion.svg" alt="Remodelación" class="h-8 w-8 object-contain" />
+        <div>
+          <span class="block text-sm font-bold uppercase tracking-wider text-[var(--color-text)]">REMODELACIÓN</span>
+          <span class="block text-sm text-[var(--color-muted)]">Transformamos lo existente</span>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <img src="/icons/sostenible.svg" alt="Sostenible" class="h-8 w-8 object-contain" />
+        <div>
+          <span class="block text-sm font-bold uppercase tracking-wider text-[var(--color-text)]">SOSTENIBLE</span>
+          <span class="block text-sm text-[var(--color-muted)]">Soluciones responsables</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </section>
+

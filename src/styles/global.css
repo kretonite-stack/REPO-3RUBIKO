@@ -9,7 +9,7 @@
 */
 :root {
   /* Paleta base — arco noche → amanecer */
-  --color-carbon: #080b12;      /* fondo oscuro, Hero / Servicios */
+  --color-carbon: #111111;      /* fondo oscuro, Hero / Servicios */
   --color-midnight: #0b2346;    /* azul profundo */
   --color-twilight: #34445d;    /* azul crepúsculo, sección Proceso */
   --color-dawn-lilac: #8f96c0;  /* lila amanecer */
@@ -17,8 +17,9 @@
   --color-sunrise: #e28756;     /* amanecer — gradientes de CTA */
   --color-accent: #a6c23a;      /* verde oliva — acento UI y botones primarios */
   --color-accent-strong: #b7d94f;
-  --color-warm-white: #f6f4ee;  /* blanco corporativo cálido, sección Nosotros */
-  --color-concrete: #d8d7d1;
+  --color-warm-white: #fafafa;  /* blanco corporativo cálido, sección Nosotros */
+  --color-concrete: #bebebe;
+  --color-hormigon: #e6e6e4;
   --color-muted: #9ea4ad;       /* texto secundario */
 
   /* Alias de compatibilidad con componentes existentes */
