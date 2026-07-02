@@ -2,40 +2,28 @@
 /*
   Sección "Proyectos" — fase 4 del arco (Oscuro, patrón topográfico).
   Fondo: 03_backgrounds/bg_projects_topographic.png (mobile: ..._mobile.png)
-  PENDIENTE: subir el asset y contenido real de proyectos (el kit no
-  traía copy ni fotos de proyectos específicos, según el reporte).
 */
-const projects = [
-  { name: "Proyecto 01", description: "Pendiente contenido real." },
-  { name: "Proyecto 02", description: "Pendiente contenido real." },
-  { name: "Proyecto 03", description: "Pendiente contenido real." },
-];
+import { ThreeDPhotoCarousel } from './ui/3d-carousel';
 ---
 
 <section
   id="proyectos"
   class="relative overflow-hidden bg-[var(--color-carbon)]"
-  style="/* TODO: background-image: url('/backgrounds/bg_projects_topographic.png'); background-size: cover; */"
+  style="background-image: url('/backgrounds/bg_projects_topographic.png'); background-size: cover; background-position: center;"
 >
-  <div class="mx-auto max-w-6xl px-6 py-24 sm:px-10">
-    <p class="reveal font-[var(--font-mono)] text-sm uppercase tracking-[0.2em] text-[var(--color-accent)]">
-      Proyectos
-    </p>
-    <h2 class="reveal mt-3 max-w-xl font-[var(--font-display)] text-3xl font-semibold text-[var(--color-text)] sm:text-4xl">
-      Lo que hemos construido
-    </h2>
+  <div class="mx-auto w-full px-0 py-24 sm:px-0">
+    <div class="mx-auto max-w-6xl px-6 sm:px-10">
+      <p class="reveal font-[var(--font-mono)] text-sm uppercase tracking-[0.2em] text-[var(--color-accent)]">
+        Proyectos Destacados
+      </p>
+      <h2 class="reveal mt-3 max-w-xl font-[var(--font-display)] text-3xl font-semibold text-[var(--color-text)] sm:text-4xl">
+        Lo que hemos construido
+      </h2>
+    </div>
 
-    <div class="mt-14 grid gap-6 sm:grid-cols-3">
-      {
-        projects.map((project) => (
-          <div class="reveal aspect-[4/5] rounded-[var(--radius-lg)] border border-[var(--color-border)] bg-[var(--color-surface)] p-6">
-            <h3 class="font-[var(--font-display)] text-lg font-semibold text-[var(--color-text)]">
-              {project.name}
-            </h3>
-            <p class="mt-2 text-sm text-[var(--color-text-muted)]">{project.description}</p>
-          </div>
-        ))
-      }
+    <!-- Carrusel Interactivo 3D -->
+    <div class="reveal mt-8 w-full">
+      <ThreeDPhotoCarousel client:visible />
     </div>
   </div>
 </section>
