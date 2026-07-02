@@ -1,62 +1,134 @@
-<section
-  id="contacto"
-  class="relative overflow-hidden bg-[var(--color-sunrise)]"
-  style="/* TODO: background-image: url('/backgrounds/bg_cta_sunrise.jpg'); background-size: cover; */"
->
-<div class="mx-auto max-w-6xl px-6 py-24 sm:px-10">
-  <div class="grid gap-16 lg:grid-cols-2">
-    <div>
-      <p class="reveal font-[var(--font-mono)] text-sm uppercase tracking-[0.2em] text-[#3a2410]">
-        Contacto
-      </p>
-      <h2 class="reveal mt-3 font-[var(--font-display)] text-3xl font-semibold text-[#1a1006] sm:text-4xl">
-        Conversemos tu proyecto
-      </h2>
-      <p class="reveal mt-6 max-w-md text-[#3a2410]">
-        Cuéntanos qué necesitas y te contactamos a la brevedad.
-      </p>
+<section id="contacto" class="relative w-full bg-[#FAFAF6] py-24 sm:py-32 overflow-hidden">
+  <div class="mx-auto w-full max-w-[1280px] px-6 sm:px-10">
+    <div class="grid gap-16 lg:grid-cols-12 lg:gap-24">
+      
+      {/* COLUMNA IZQUIERDA */}
+      <div class="flex flex-col lg:col-span-5">
+        <p class="font-semibold uppercase tracking-[0.2em] text-[#8CA23A] text-sm mb-4">
+          Contacto
+        </p>
+        <h2 class="font-[var(--font-display)] text-[40px] md:text-[56px] font-bold leading-[1.1] text-[#111111]">
+          Conversemos<br/>
+          <span class="text-[#8CA23A]">tu proyecto</span>
+        </h2>
+        <p class="mt-6 text-[16px] text-[#66665F] leading-relaxed max-w-md">
+          Cuéntanos tus ideas y necesidades. Nuestro equipo te acompaña en cada etapa para diseñar y construir espacios que mejoran tu vida.
+        </p>
+
+        {/* Info de contacto */}
+        <div class="mt-12 flex flex-col gap-6">
+          <div class="flex items-start gap-4 border-b border-[#D9D9D3] pb-6">
+            <svg class="w-6 h-6 text-[#8CA23A] flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+            <div>
+              <h3 class="font-semibold text-[#111111]">Email</h3>
+              <p class="text-[#66665F] mt-1 text-sm">contacto@3kubiko.cl</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 border-b border-[#D9D9D3] pb-6">
+            <svg class="w-6 h-6 text-[#8CA23A] flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+            <div>
+              <h3 class="font-semibold text-[#111111]">Teléfono / WhatsApp</h3>
+              <p class="text-[#66665F] mt-1 text-sm">+56 9 1234 5678</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 border-b border-[#D9D9D3] pb-6">
+            <svg class="w-6 h-6 text-[#8CA23A] flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.243-4.243a8 8 0 1111.314 0z"></path><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+            <div>
+              <h3 class="font-semibold text-[#111111]">Ubicación</h3>
+              <p class="text-[#66665F] mt-1 text-sm">Santiago, Chile</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 pb-2">
+            <svg class="w-6 h-6 text-[#8CA23A] flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <div>
+              <h3 class="font-semibold text-[#111111]">Horario de atención</h3>
+              <p class="text-[#66665F] mt-1 text-sm">Lunes a Viernes, 09:00 - 18:00 hrs</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Chips */}
+        <div class="mt-12 flex flex-wrap gap-3">
+          <span class="inline-flex items-center gap-2 rounded-md border border-[#D9D9D3] bg-transparent px-3 py-1.5 text-sm font-medium text-[#111111]">
+            <svg class="w-4 h-4 text-[#8CA23A]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 21h18M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16M9 9h6M9 13h6"></path></svg> Arquitectura
+          </span>
+          <span class="inline-flex items-center gap-2 rounded-md border border-[#D9D9D3] bg-transparent px-3 py-1.5 text-sm font-medium text-[#111111]">
+            <svg class="w-4 h-4 text-[#8CA23A]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg> Construcción
+          </span>
+          <span class="inline-flex items-center gap-2 rounded-md border border-[#D9D9D3] bg-transparent px-3 py-1.5 text-sm font-medium text-[#111111]">
+            <svg class="w-4 h-4 text-[#8CA23A]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16v16H4zM4 9h16M9 4v16"></path></svg> Remodelación
+          </span>
+          <span class="inline-flex items-center gap-2 rounded-md border border-[#D9D9D3] bg-transparent px-3 py-1.5 text-sm font-medium text-[#111111]">
+            <svg class="w-4 h-4 text-[#8CA23A]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> Sostenible
+          </span>
+        </div>
+      </div>
+
+      {/* COLUMNA DERECHA — FORMULARIO */}
+      <div class="lg:col-span-7">
+        <div class="rounded-[12px] border border-[#D9D9D3] bg-white p-8 md:p-12 shadow-[0_12px_32px_rgba(17,17,17,0.05)]">
+          <div class="flex items-center gap-3 border-b border-[#D9D9D3] pb-6 mb-8">
+            <svg class="w-6 h-6 text-[#8CA23A]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+            <h3 class="text-[20px] font-bold text-[#111111]">Cuéntanos sobre tu proyecto</h3>
+          </div>
+
+          <form id="contact-form" class="space-y-6">
+            <div class="grid gap-6 md:grid-cols-2">
+              <div class="flex flex-col gap-2">
+                <label for="name" class="text-[14px] font-semibold text-[#111111]">Nombre completo</label>
+                <input id="name" name="name" type="text" required placeholder="Ingresa tu nombre" class="w-full rounded-[6px] border border-[#D9D9D3] bg-white px-4 h-[50px] text-[#111111] placeholder:text-[#999999] outline-none transition-all focus:border-[#8CA23A] focus:ring-[3px] focus:ring-[#8CA23A]/15" />
+              </div>
+              <div class="flex flex-col gap-2">
+                <label for="email" class="text-[14px] font-semibold text-[#111111]">Correo electrónico</label>
+                <input id="email" name="email" type="email" required placeholder="nombre@ejemplo.com" class="w-full rounded-[6px] border border-[#D9D9D3] bg-white px-4 h-[50px] text-[#111111] placeholder:text-[#999999] outline-none transition-all focus:border-[#8CA23A] focus:ring-[3px] focus:ring-[#8CA23A]/15" />
+              </div>
+            </div>
+
+            <div class="grid gap-6 md:grid-cols-2">
+              <div class="flex flex-col gap-2">
+                <label for="phone" class="text-[14px] font-semibold text-[#111111]">Teléfono</label>
+                <input id="phone" name="phone" type="tel" required placeholder="+56 9 1234 5678" class="w-full rounded-[6px] border border-[#D9D9D3] bg-white px-4 h-[50px] text-[#111111] placeholder:text-[#999999] outline-none transition-all focus:border-[#8CA23A] focus:ring-[3px] focus:ring-[#8CA23A]/15" />
+              </div>
+              <div class="flex flex-col gap-2">
+                <label for="project_type" class="text-[14px] font-semibold text-[#111111]">Tipo de proyecto</label>
+                <select id="project_type" name="project_type" required class="w-full rounded-[6px] border border-[#D9D9D3] bg-white px-4 h-[50px] text-[#111111] outline-none transition-all focus:border-[#8CA23A] focus:ring-[3px] focus:ring-[#8CA23A]/15 appearance-none cursor-pointer" style="background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%24%2024%22%20fill%3D%22none%22%20stroke%3D%22%2366665F%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E'); background-repeat: no-repeat; background-position: right 1rem center; background-size: 1.2em;">
+                  <option value="" disabled selected>Selecciona una opción</option>
+                  <option value="Arquitectura">Arquitectura</option>
+                  <option value="Construcción">Construcción</option>
+                  <option value="Remodelación">Remodelación</option>
+                  <option value="Diseño">Diseño</option>
+                  <option value="Dirección de obra">Dirección de obra</option>
+                  <option value="Asesoría">Asesoría</option>
+                  <option value="Otro">Otro</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="flex flex-col gap-2">
+              <label for="message" class="text-[14px] font-semibold text-[#111111]">Mensaje</label>
+              <textarea id="message" name="message" rows="4" minlength="10" required placeholder="Cuéntanos sobre tu proyecto..." class="w-full rounded-[6px] border border-[#D9D9D3] bg-white px-4 py-3 min-h-[120px] text-[#111111] placeholder:text-[#999999] outline-none transition-all resize-y focus:border-[#8CA23A] focus:ring-[3px] focus:ring-[#8CA23A]/15"></textarea>
+            </div>
+
+            <div class="flex items-start gap-3 pt-2">
+              <input id="terms" name="terms" type="checkbox" required class="mt-1 h-4 w-4 rounded-[4px] border-[#D9D9D3] text-[#8CA23A] focus:ring-[#8CA23A]/15 cursor-pointer accent-[#8CA23A]" />
+              <label for="terms" class="text-[13px] text-[#66665F]">
+                Acepto los <a href="#" class="text-[#8CA23A] underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8CA23A] rounded-sm">términos y condiciones</a> y el tratamiento de mis datos personales.
+              </label>
+            </div>
+
+            <div class="pt-4 flex flex-col items-start gap-4">
+              <button type="submit" class="group flex items-center justify-center gap-3 w-full md:w-[260px] md:ml-auto rounded-[6px] bg-[#8CA23A] px-6 h-[52px] font-semibold text-white transition-all hover:bg-[#6F842B] disabled:opacity-50 disabled:cursor-not-allowed focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#8CA23A]">
+                Enviar mensaje
+                <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+              </button>
+              <p id="form-status" role="status" class="text-sm font-medium hidden md:ml-auto"></p>
+            </div>
+          </form>
+        </div>
+      </div>
+
     </div>
-
-    <form id="contact-form" class="reveal space-y-5">
-      <div>
-        <label for="name" class="mb-2 block text-sm text-[#3a2410]">Nombre</label>
-        <input
-          id="name"
-          name="name"
-          type="text"
-          required
-          class="w-full rounded-[var(--radius-sm)] border border-black/15 bg-white/70 px-4 py-3 text-[#1a1006] outline-none backdrop-blur-sm focus-visible:border-[#1a1006]"
-        />
-      </div>
-      <div>
-        <label for="email" class="mb-2 block text-sm text-[#3a2410]">Correo</label>
-        <input
-          id="email"
-          name="email"
-          type="email"
-          required
-          class="w-full rounded-[var(--radius-sm)] border border-black/15 bg-white/70 px-4 py-3 text-[#1a1006] outline-none backdrop-blur-sm focus-visible:border-[#1a1006]"
-        />
-      </div>
-      <div>
-        <label for="message" class="mb-2 block text-sm text-[#3a2410]">Mensaje</label>
-        <textarea
-          id="message"
-          name="message"
-          rows="4"
-          required
-          class="w-full rounded-[var(--radius-sm)] border border-black/15 bg-white/70 px-4 py-3 text-[#1a1006] outline-none backdrop-blur-sm focus-visible:border-[#1a1006]"
-        ></textarea>
-      </div>
-
-      <button type="submit" class="w-full rounded-[var(--radius-sm)] bg-[#1a1006] px-6 py-3 font-medium text-white transition-opacity hover:opacity-90 disabled:opacity-50">
-        Enviar mensaje
-      </button>
-
-      <p id="form-status" role="status" class="text-sm text-[#3a2410]"></p>
-    </form>
   </div>
-</div>
 </section>
 
 <script>
@@ -74,18 +146,25 @@
 
     submitButton && (submitButton.disabled = true);
     status.textContent = "Enviando…";
+    status.classList.remove('hidden', 'text-[#D64545]', 'text-[#708C2F]');
+    status.classList.add('text-[#66665F]');
 
     const { error } = await supabase.from("contact_messages").insert({
       name: formData.get("name"),
       email: formData.get("email"),
+      phone: formData.get("phone"),
+      project_type: formData.get("project_type"),
       message: formData.get("message"),
     });
 
+    status.classList.remove('text-[#66665F]');
+
     if (error) {
-      status.textContent =
-        "No pudimos enviar tu mensaje. Inténtalo nuevamente o escríbenos directo por correo.";
+      status.textContent = "No pudimos enviar tu mensaje. Inténtalo nuevamente.";
+      status.classList.add('text-[#D64545]');
     } else {
-      status.textContent = "Gracias, recibimos tu mensaje. Te contactaremos pronto.";
+      status.textContent = "Tu mensaje fue enviado correctamente. Nos pondremos en contacto contigo a la brevedad.";
+      status.classList.add('text-[#708C2F]');
       form.reset();
     }
 
