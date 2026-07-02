@@ -158,20 +158,18 @@
       message: formData.get("message"),
     });
 
-    // 2. Enviar correo a 3Kubiko.ventas@gmail.com usando FormSubmit (AJAX)
-    const emailResponse = await fetch("https://formsubmit.co/ajax/3Kubiko.ventas@gmail.com", {
+    // 2. Enviar correo a 3Kubiko.ventas@gmail.com usando Resend (API Route local)
+    const emailResponse = await fetch("/api/send-email", {
       method: "POST",
       headers: { 
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        Nombre: formData.get("name"),
-        Correo: formData.get("email"),
-        Teléfono: formData.get("phone"),
-        Proyecto: formData.get("project_type"),
-        Mensaje: formData.get("message"),
-        _subject: "Nuevo mensaje de contacto web - 3Kubiko"
+        name: formData.get("name"),
+        email: formData.get("email"),
+        phone: formData.get("phone"),
+        project_type: formData.get("project_type"),
+        message: formData.get("message")
       })
     });
 
