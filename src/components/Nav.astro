@@ -2,13 +2,21 @@
   <!-- Gradiente sutil para asegurar lectura en el hero -->
   <div class="absolute inset-0 bg-gradient-to-b from-black/60 to-transparent pointer-events-none -z-10"></div>
   
-  <nav class="mx-auto flex max-w-[1440px] items-center justify-between px-6 sm:px-10">
-    <a href="#" class="flex items-center transition-transform hover:scale-105">
-      {/* Se aumentó el tamaño del logo de h-8 a h-16/h-20 para mayor claridad */}
-      <img src="/brand/logo_on_dark.png" alt="3Kubiko" class="h-16 sm:h-20 w-auto object-contain drop-shadow-lg" />
+  <nav class="mx-auto flex max-w-[1440px] items-center justify-between px-6 sm:px-10 min-h-[66px] md:min-h-[78px]">
+    
+    <a href="/" class="brand" aria-label="3Kubiko — Inicio">
+      <img
+        src="https://res.cloudinary.com/ddqx435i5/image/upload/v1782952665/logo_f6sphu.png"
+        alt="3Kubiko — Diseño y Construcción"
+        class="brand__logo"
+        width="570"
+        height="190"
+        fetchpriority="high"
+        decoding="async"
+      />
     </a>
     
-    <ul class="hidden gap-10 text-[15px] font-medium text-white/80 sm:flex">
+    <ul class="hidden gap-10 text-[15px] font-medium text-white/80 sm:flex ml-auto mr-10">
       <li><a href="#nosotros" class="transition-colors hover:text-[var(--color-accent)]">Nosotros</a></li>
       <li><a href="#servicios" class="transition-colors hover:text-[var(--color-accent)]">Servicios</a></li>
       <li><a href="#proyectos" class="transition-colors hover:text-[var(--color-accent)]">Proyectos</a></li>
@@ -24,6 +32,35 @@
     </a>
   </nav>
 </header>
+
+<style>
+.brand {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  text-decoration: none;
+  line-height: 0;
+}
+
+.brand__logo {
+  display: block;
+  width: clamp(145px, 14vw, 190px);
+  height: auto;
+  max-height: 58px;
+  object-fit: contain;
+  object-position: left center;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+@media (max-width: 768px) {
+  .brand__logo {
+    width: 145px;
+    max-height: 44px;
+  }
+}
+</style>
 
 <script>
   // Script para añadir efecto Glassmorphism al hacer scroll
