@@ -44,10 +44,24 @@
         </a>
       </div>
 
-      {/* Columna Derecha - Imagen */}
-      <figure class="relative w-full overflow-hidden rounded-[12px] aspect-[4/5] sm:aspect-[3/4] lg:aspect-auto lg:h-[700px] shadow-sm group">
-        <img src="/carrusel/proyecto-1.png" alt="Proyecto residencial desarrollado por 3Kubiko" class="w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-[1.03]" loading="lazy" decoding="async" />
-        <figcaption class="absolute bottom-4 left-4 bg-[#0A0A0A] px-4 py-2 text-white text-[10px] sm:text-[11px] font-medium tracking-widest uppercase rounded-sm">
+      {/* Columna Derecha - Imagen Slideshow */}
+      <figure id="about-slideshow" class="relative w-full overflow-hidden rounded-[12px] aspect-[4/5] sm:aspect-[3/4] lg:aspect-auto lg:h-[700px] shadow-sm group">
+        
+        {/* Generamos las 9 imágenes. Solo la primera es visible inicialmente. */}
+        {
+          [1, 2, 3, 4, 5, 6, 7, 8, 9].map((num, i) => (
+            <img 
+              src={`/carrusel/proyecto-${num}.png`} 
+              alt={`Proyecto residencial desarrollado por 3Kubiko - ${num}`} 
+              class={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${i === 0 ? 'opacity-100' : 'opacity-0'} group-hover:scale-[1.03] duration-[1.5s]`}
+              loading={i === 0 ? "eager" : "lazy"} 
+              decoding="async" 
+              data-slide={i}
+            />
+          ))
+        }
+
+        <figcaption class="absolute bottom-4 left-4 z-10 bg-[#0A0A0A] px-4 py-2 text-white text-[10px] sm:text-[11px] font-medium tracking-widest uppercase rounded-sm">
           Proyectos desarrollados por 3Kubiko
         </figcaption>
       </figure>
@@ -145,3 +159,29 @@
     }
   }
 </style>
+
+<script>
+  // Script vainilla para hacer un crossfade automático entre las imágenes
+  document.addEventListener('DOMContentLoaded', () => {
+    const slideshow = document.getElementById('about-slideshow');
+    if (slideshow) {
+      const slides = slideshow.querySelectorAll('img[data-slide]');
+      let currentSlide = 0;
+      
+      if (slides.length > 1) {
+        setInterval(() => {
+          // Ocultar actual
+          slides[currentSlide].classList.remove('opacity-100');
+          slides[currentSlide].classList.add('opacity-0');
+          
+          // Avanzar al siguiente
+          currentSlide = (currentSlide + 1) % slides.length;
+          
+          // Mostrar nuevo
+          slides[currentSlide].classList.remove('opacity-0');
+          slides[currentSlide].classList.add('opacity-100');
+        }, 3500); // Cambia cada 3.5 segundos
+      }
+    }
+  });
+</script>
