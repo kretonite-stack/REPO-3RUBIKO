@@ -1,12 +1,21 @@
 import { Resend } from 'resend';
 import type { APIRoute } from 'astro';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export const POST: APIRoute = async ({ request }) => {
   try {
+    // Usar process.env o import.meta.env según el entorno (Vite/Node)
+    const apiKey = process.env.RESEND_API_KEY || import.meta.env.RESEND_API_KEY;
+    
+    if (!apiKey) {
+      console.error("Falta RESEND_API_KEY");
+      return new Response(JSON.stringify({ error: { message: "API Key de Resend no configurada" } }), { status: 500 });
+    }
+
+    const resend = new Resend(apiKey);
     const data = await request.json();
     const { name, email, phone, project_type, message } = data;
+
+    console.log("Intentando enviar correo a través de Resend...");
 
     const { data: resendData, error } = await resend.emails.send({
       from: '3Kubiko Web <onboarding@resend.dev>',
@@ -27,11 +36,14 @@ export const POST: APIRoute = async ({ request }) => {
     });
 
     if (error) {
+      console.error("Error de Resend:", error);
       return new Response(JSON.stringify({ error }), { status: 400 });
     }
 
+    console.log("Correo enviado con éxito:", resendData);
     return new Response(JSON.stringify(resendData), { status: 200 });
   } catch (error) {
-    return new Response(JSON.stringify({ error: (error as Error).message }), { status: 500 });
+    console.error("Error general en el servidor:", error);
+    return new Response(JSON.stringify({ error: { message: (error as Error).message } }), { status: 500 });
   }
 };

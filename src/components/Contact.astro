@@ -175,8 +175,22 @@
 
     status.classList.remove('text-[#66665F]');
 
+    let errorMessage = "No pudimos enviar tu mensaje. Inténtalo nuevamente.";
+    
+    if (!emailResponse.ok) {
+      try {
+        const errorData = await emailResponse.json();
+        console.error("Resend Error Response:", errorData);
+        if (errorData?.error?.message) {
+          errorMessage = "Error enviando correo: " + errorData.error.message;
+        }
+      } catch (e) {
+        console.error("No se pudo parsear el error de Resend");
+      }
+    }
+
     if (supabaseError || !emailResponse.ok) {
-      status.textContent = "No pudimos enviar tu mensaje. Inténtalo nuevamente.";
+      status.textContent = errorMessage;
       status.classList.add('text-[#D64545]');
     } else {
       status.textContent = "Tu mensaje fue enviado correctamente. Nos pondremos en contacto contigo a la brevedad.";
