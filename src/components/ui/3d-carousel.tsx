@@ -59,13 +59,15 @@ export function useMediaQuery(
 }
 
 const architectureImages = [
-  "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80",
-  "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80",
-  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
-  "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&q=80",
-  "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80",
-  "https://images.unsplash.com/photo-1510627498534-7221a603a152?w=800&q=80",
-  "https://images.unsplash.com/photo-1449844908441-8829872d2607?w=800&q=80",
+  "/carrusel/proyecto-1.png",
+  "/carrusel/proyecto-2.png",
+  "/carrusel/proyecto-3.png",
+  "/carrusel/proyecto-4.png",
+  "/carrusel/proyecto-5.png",
+  "/carrusel/proyecto-6.png",
+  "/carrusel/proyecto-7.png",
+  "/carrusel/proyecto-8.png",
+  "/carrusel/proyecto-9.png",
 ]
 
 const duration = 0.15
